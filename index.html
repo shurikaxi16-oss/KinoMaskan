@@ -1,1 +1,86 @@
-
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kino Maskan — filmlar va multfilmlar ro‘yxati</title>
+<meta name="description" content="Kino Maskan: drama, komediya, sarguzasht, triller va multfilmlar. Film nomini qidiring, janr bo‘yicha tanlang.">
+<link rel="canonical" href="https://shurikaxi16-oss.github.io/KinoMaskan/">
+<meta property="og:title" content="Kino Maskan">
+<meta property="og:description" content="Filmlar va multfilmlar ro‘yxati. Qidiring, tanlang, tomosha qiling.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shurikaxi16-oss.github.io/KinoMaskan/">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e1a2b;--fg:#f3ebdd;--mut:#9fb0c4;--card:#16263d;--ac:#1fa2a6;--hot:#e0526c;--line:#27405f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f3ebdd;--fg:#0e1a2b;--mut:#4d5f78;--card:#fff9ee;--ac:#0f7f83;--hot:#b5304a;--line:#d9ccb4}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.5 Manrope,system-ui,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.logo{font:700 18px Unbounded,sans-serif;letter-spacing:-.02em}
+.hero{border-radius:18px;overflow:hidden;padding:36px 22px;margin-bottom:22px;background:repeating-linear-gradient(45deg,transparent 0 22px,rgba(255,255,255,.05) 22px 24px),linear-gradient(120deg,#0f7f83,#1c3a6b 60%,#7a2a4d)}
+.hero h1{font:700 clamp(28px,7vw,52px)/1.05 Unbounded,sans-serif;margin:0 0 10px;color:#f3ebdd;max-width:14em}
+.hero p{margin:0 0 18px;color:#e5ddcb;max-width:34em}
+.btn{background:#f3ebdd;color:#0e1a2b;border:0;border-radius:999px;padding:12px 22px;font:600 15px Manrope,sans-serif;cursor:pointer}
+.tools{display:flex;flex-direction:column;gap:12px;margin-bottom:18px}
+input{width:100%;padding:13px 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--fg);font:inherit}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.chip{flex:none;border:1px solid var(--line);background:transparent;color:var(--fg);border-radius:999px;padding:7px 16px;font:600 14px Manrope,sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--ac);border-color:var(--ac);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;padding-bottom:40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer;text-align:left;color:var(--fg);padding:0;font:inherit}
+.poster{aspect-ratio:2/3;display:flex;align-items:flex-end;padding:12px;font:700 17px/1.1 Unbounded,sans-serif;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.4);background-size:cover;background-position:center}
+.meta{padding:10px 12px}.meta b{display:block;font-size:14px}.meta span{color:var(--mut);font-size:13px}
+.empty{grid-column:1/-1;color:var(--mut);padding:30px 0}
+dialog{border:0;border-radius:18px;padding:0;max-width:440px;width:calc(100% - 32px);background:var(--card);color:var(--fg)}
+dialog::backdrop{background:rgba(5,10,20,.7)}
+dialog .poster{aspect-ratio:16/9;font-size:24px}
+.body{padding:18px}.body h2{font:700 20px Unbounded,sans-serif;margin:0 0 6px}.body p{color:var(--mut);margin:8px 0 16px}
+.row{display:flex;gap:10px}.row .btn{flex:1;text-align:center;text-decoration:none}.btn.alt{background:transparent;color:var(--fg);border:1px solid var(--line)}
+header nav{display:flex;gap:8px}.tg{background:var(--ac);color:#fff;text-decoration:none;border-radius:999px;padding:8px 14px;font:600 13px Manrope,sans-serif}.tg.alt{background:transparent;color:var(--fg);border:1px solid var(--line)}
+footer{color:var(--mut);font-size:13px;padding:0 0 28px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo">Kino Maskan</div><nav><a class="tg" href="https://t.me/multfilmlarmamlakati_bot" target="_blank" rel="noopener">Kino bot</a><a class="tg alt" href="https://t.me/Jaydari_shurik" target="_blank" rel="noopener">Kanal</a></nav></header>
+<section class="hero">
+<h1>Bugun nima ko‘ramiz?</h1>
+<p>Eng yaxshi filmlar va multfilmlar bir joyda. Qidiring, tanlang, tomosha qiling.</p>
+<button class="btn" id="hB">Tasodifiy film</button>
+</section>
+<div class="tools">
+<input id="q" type="search" placeholder="Film nomini qidiring…" aria-label="Qidiruv">
+<div class="chips" id="chips"><button class="chip" aria-pressed="true" data-g="Hammasi">Hammasi</button><button class="chip" aria-pressed="false" data-g="Drama">Drama</button><button class="chip" aria-pressed="false" data-g="Sarguzasht">Sarguzasht</button><button class="chip" aria-pressed="false" data-g="Komediya">Komediya</button><button class="chip" aria-pressed="false" data-g="Multfilm">Multfilm</button><button class="chip" aria-pressed="false" data-g="Triller">Triller</button></div>
+</div>
+<main class="grid" id="grid"></main>
+<footer>Kino Maskan</footer>
+</div>
+<dialog id="dlg"><div class="poster" id="dP"></div><div class="body"><h2 id="dT"></h2><span id="dM" style="color:var(--mut);font-size:14px"></span><p id="dD"></p><div class="row"><a class="btn" id="dL" href="#">Tomosha qilish</a><button class="btn alt" id="dX">Yopish</button></div></div></dialog>
+<script>
+const MOVIES=[
+{t:"Qora tun",y:2024,g:"Drama",d:"128 daq",c:["#1c3a6b","#7a2a4d"],s:"Tarixiy davr fonida inson taqdiri haqida chuqur hikoya.",l:"#"},
+{t:"Samarqand yo‘li",y:2023,g:"Sarguzasht",d:"110 daq",c:["#0f7f83","#16263d"],s:"Qadimiy karvon yo‘lida xazina izlagan do‘stlar sarguzashti.",l:"#"},
+{t:"Kulgi bozori",y:2025,g:"Komediya",d:"95 daq",c:["#e0526c","#c98a1b"],s:"Bozordagi kutilmagan voqealar zanjiri.",l:"#"},
+{t:"Oxirgi daqiqa",y:2024,g:"Drama",d:"102 daq",c:["#3b2f6b","#0f7f83"],s:"Futbol maydonidagi bitta qaror butun hayotni o‘zgartirdi.",l:"#"},
+{t:"Sehrli qishloq",y:2022,g:"Multfilm",d:"84 daq",c:["#c98a1b","#1fa2a6"],s:"Bolalar uchun: qishloqdagi sirli o‘rmon va uning do‘stlari.",l:"#"},
+{t:"Tun soyasi",y:2025,g:"Triller",d:"117 daq",c:["#0e1a2b","#b5304a"],s:"Kichik shaharchada yo‘qolgan odam izidan ketgan tergovchi.",l:"#"},
+{t:"Bahor kuni",y:2023,g:"Komediya",d:"99 daq",c:["#5aa469","#1c3a6b"],s:"To‘y oldidan boshlangan kulgili chalkashliklar.",l:"#"},
+{t:"Bo‘ri bola",y:2021,g:"Multfilm",d:"78 daq",c:["#7a2a4d","#c98a1b"],s:"Dasht bo‘rilari orasida o‘sgan bolakay haqida ertak.",l:"#"}
+];
+const $=id=>document.getElementById(id);let genre="Hammasi",term="";
+const grad=m=>`linear-gradient(160deg,${m.c[0]},${m.c[1]})`;
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+$("chips").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;genre=b.dataset.g;document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b));render()};
+$("q").oninput=e=>{term=e.target.value.trim().toLowerCase();render()};
+function render(){const l=MOVIES.map((m,i)=>[m,i]).filter(([m])=>(genre==="Hammasi"||m.g===genre)&&m.t.toLowerCase().includes(term));
+$("grid").innerHTML=l.length?l.map(([m,i])=>`<button class="card" data-i="${i}"><div class="poster" style="background:${grad(m)}">${esc(m.t)}</div><div class="meta"><b>${esc(m.t)}</b><span>${m.y} · ${esc(m.g)}</span></div></button>`).join(""):'<div class="empty">Hech narsa topilmadi. Boshqa nom yoki janrni sinab ko‘ring.</div>'}
+function open_(i){const m=MOVIES[i];$("dP").style.background=grad(m);$("dP").textContent=m.t;$("dT").textContent=m.t;$("dM").textContent=`${m.y} · ${m.g} · ${m.d}`;$("dD").textContent=m.s;$("dL").href=/^https?:\/\//.test(m.l)?m.l:"#";$("dlg").showModal()}
+$("grid").onclick=e=>{const c=e.target.closest(".card");if(c)open_(+c.dataset.i)};
+$("dX").onclick=()=>$("dlg").close();$("dlg").onclick=e=>{if(e.target===$("dlg"))$("dlg").close()};
+$("hB").onclick=()=>open_(Math.floor(Math.random()*MOVIES.length));
+render();
+</script>
+</body>
+</html>
