@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shurikaxi16-oss.github.io/KinoMaskan/sitemap.xml
